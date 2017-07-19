@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snake and ladder</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<header class="header">
+	<center><p id="heading">Snakes 'N' Ladder</p></center>
+</header>
+<div class="container">
+	<div class="row">
+		<div class="col odd" val="1">1</div>
+		<div class="col even" val="2">2<span class="jump">L->15</span></div>
+		<div class="col odd" val="3">3</div>
+		<div class="col even" val="4">4</div>
+		<div class="col odd" val="5">5<span class="jump">L->19</span></div>
+		<div class="col even" val="6">6</div>
+	</div>
+	<div class="row">
+		<div class="col even" val="12">12</div>
+		<div class="col odd" val="11">11</div>
+		<div class="col even" val="10">10</div>
+		<div class="col odd" val="9">9</div>
+		<div class="col even" val="8">8</div>
+		<div class="col odd" val="7">7</div>
+	</div>
+	<div class="row">
+		<div class="col odd" val="13">13</div>
+		<div class="col even" val="14">14</div>
+		<div class="col odd" val="15">15</div>
+		<div class="col even" val="16">16</div>
+		<div class="col odd" val="17">17</div>
+		<div class="col even" val="18">18</div>
+	</div>
+	<div class="row">
+		<div class="col even" val="24">24</div>
+		<div class="col odd" val="23">23</div>
+		<div class="col even" val="22">22</div>
+		<div class="col odd" val="21">21<span class="jump">S->12</span></div>
+		<div class="col even" val="20">20</div>
+		<div class="col odd" val="19">19</div>
+	</div>
+	<div class="row">
+		<div class="col odd" val="25">25</div>
+		<div class="col even" val="26">26</div>
+		<div class="col odd" val="27">27</div>
+		<div class="col even" val="28">28</div>
+		<div class="col odd" val="29">29</div>
+		<div class="col even" val="30">30</div>
+	</div>
+	<div class="row">
+		<div class="col even" val="36">36</div>
+		<div class="col odd" val="35">35</div>
+		<div class="col even" val="34">34</div>
+		<div class="col odd" val="33">33</div>
+		<div class="col even" val="32">32<span class="jump">S->2</span></div>
+		<div class="col odd" val="31">31</div>
+	</div>	
+</div>
+<button id="diceButton" onclick="diceRoll()" >Roll Dice</button>
+<div id="randomResult"></div>
+</body>
+</html>

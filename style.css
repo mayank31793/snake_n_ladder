@@ -1,0 +1,79 @@
+*{
+	box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+.header{ 
+	height: 60px;
+	background-color: green;
+}
+
+.container{
+	margin-top: 20px;
+	position: relative;
+}
+
+#heading{
+	margin: 0 auto;
+	font-style: italic;
+	font-size: 50px;
+}
+
+.col{
+	width: 70px;
+	height: 70px;
+	border: 1px solid;
+	display: inline-block;
+	margin-bottom: 4px;
+}
+
+.even{
+	background-color: #AEF387;
+}
+
+.odd{
+	background-color: #F09378;
+}
+
+#diceButton,.container,#randomResult{
+	float: left;
+}
+
+#diceButton{
+	margin-top: 20px;
+	margin-left: 20px;
+	font-size: 20px;
+	border-radius: 5px;
+	padding: 15px;
+	color: white;
+	background-color: #877B87;
+	border: 0px;
+}
+
+#diceButton:hover{
+	text-shadow: 2px 2px black;
+	cursor: pointer;
+	border: 0px;
+}
+
+#randomResult{
+	position: absolute;
+	top: 145px;
+	left: 500px;
+	font-size: 130px;
+	text-shadow: 2px 2px #F3913F;
+}
+
+.number{
+	float: left;
+}
+
+.jump{
+	position: relative;
+	top:50px;
+	left: 10px;
+	color: #746F11;
+}
