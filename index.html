@@ -15,7 +15,7 @@
 		<div class="col even" val="2">2<span class="jump">L->15</span></div>
 		<div class="col odd" val="3">3</div>
 		<div class="col even" val="4">4</div>
-		<div class="col odd" val="5">5<span class="jump">L->19</span></div>
+		<div class="col odd" val="5">5<span class="jump">L->27</span></div>
 		<div class="col even" val="6">6</div>
 	</div>
 	<div class="row">
@@ -52,14 +52,19 @@
 	</div>
 	<div class="row">
 		<div class="col even" val="36">36</div>
-		<div class="col odd" val="35">35</div>
+		<div class="col odd" val="35">35<span class="jump">S->3</span></div>
 		<div class="col even" val="34">34</div>
 		<div class="col odd" val="33">33</div>
-		<div class="col even" val="32">32<span class="jump">S->2</span></div>
+		<div class="col even" val="32">32</div>
 		<div class="col odd" val="31">31</div>
 	</div>	
 </div>
 <button id="diceButton" onclick="diceRoll()" >Roll Dice</button>
 <div id="randomResult"></div>
+<audio controls id="gameoverAudio" class="game">
+  <source src="Gameover.ogg" type="audio/ogg">
+  <source src="Gameover.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 </body>
 </html>
