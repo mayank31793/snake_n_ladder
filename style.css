@@ -2,82 +2,108 @@
 	box-sizing: border-box;
 }
 
-*:focus {
-    outline: none;
-}
-
-.header{ 
-	height: 60px;
-	background-color: green;
-}
-
-.container{
-	margin-top: 20px;
-	position: relative;
-}
-
-#heading{
-	margin: 0 auto;
-	font-style: italic;
-	font-size: 50px;
-}
-
-.col{
-	width: 70px;
-	height: 70px;
-	border: 1px solid;
-	display: inline-block;
-	margin-bottom: 4px;
-}
-
-.even{
-	background-color: #AEF387;
-}
-
-.odd{
-	background-color: #F09378;
-}
-
-#diceButton,.container,#randomResult{
-	float: left;
-}
-
-#diceButton{
-	margin-top: 20px;
-	margin-left: 20px;
-	font-size: 20px;
-	border-radius: 5px;
-	padding: 15px;
-	color: white;
-	background-color: #877B87;
-	border: 0px;
-}
-
-#diceButton:hover{
-	text-shadow: 2px 2px black;
-	cursor: pointer;
-	border: 0px;
-}
-
-#randomResult{
-	position: absolute;
-	top: 145px;
-	left: 500px;
-	font-size: 130px;
-	text-shadow: 2px 2px #F3913F;
-}
-
-.number{
-	float: left;
-}
-
-.jump{
-	position: relative;
-	top:50px;
-	left: 10px;
-	color: #746F11;
-}
-
-#gameoverAudio{
+#playIn,#playOut{
 	display: none;
+}
+
+.details{
+	width: 400px;
+	height: 300px;
+	z-index: 1;
+	background-color: #A65D88;
+	border-radius: 4px;
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	left: 0%;
+	right: 0%;
+	text-align: center;
+	margin: auto;
+	box-shadow: 1px 1px 1px 1px #605A5E;
+}
+
+#p1,#p2{
+	width: 250px;
+	height: 30px;
+	margin-top: 10px;
+	border-radius: 4px;
+	font-size: 18px;
+	font-style: italic;
+	padding: 3px;
+	border-color: #DFB209;
+}
+
+input:focus{
+	outline: none;
+}
+
+#enterButton{
+	width: 90px;
+	height: 30px;
+	border-radius: 4px;
+	background-color: #14EFBA;
+	font-size: 20px;
+}
+
+#enterButton:hover{
+	cursor: pointer;
+	box-shadow: 1px 1px #302D2F;
+}
+
+.hide{
+	display: none;
+}
+
+.gridOption{
+	width: 45px;
+	height: 40px;
+	background-color: green;
+	border-radius: 5px;
+}
+
+.gridOption:hover{
+	cursor: pointer;
+}
+
+.divChild{
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	display: inline;
+	border: 1px solid black;
+}
+
+.gameClass{
+	position: fixed;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	width: 100%;
+	/*height: 500px;*/
+	margin: auto;
+	background-color: #8E730D;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.gameClass1{
+	display: none;
+}
+
+.elemStyle{
+	width: 50px;
+	height: 50px;
+	background-color: #A0DBB4;
+	border: 1px solid black;
+	display: inline-block;
+	margin-right: 3px;
+	margin-bottom: 3px;
+}
+
+.DiceResult{
+	position: absolute;
+	float: right;
+	right: 30%;
+	/*clear: both;*/
 }
