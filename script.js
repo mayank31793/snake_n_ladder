@@ -29,6 +29,7 @@ function hideDiv(){
 	for(var i=0;i<buttonValue;i++){	
 
 		if(buttonValue==36){
+
 			if((i+1)%6==0){
 				var elem = document.createElement('div');
 				var elemBr = document.createElement('br');
@@ -38,6 +39,41 @@ function hideDiv(){
 				document.getElementById('gameId').appendChild(elem);
 				document.getElementById('gameId').appendChild(elemBr);
 			}
+
+			//ladder for 36 grid
+			else if(i==4){
+				var elem = document.createElement('div');
+				var text = document.createTextNode(i+1+" L->21");
+				elem.appendChild(text);				
+				elem.className = "elemStyleLadder";
+				document.getElementById('gameId').appendChild(elem);				
+			}
+
+			else if(i==13){
+				var elem = document.createElement('div');
+				var text = document.createTextNode(i+1+" L->29");
+				elem.appendChild(text);				
+				elem.className = "elemStyleLadder";
+				document.getElementById('gameId').appendChild(elem);				
+			}
+
+			//snakes for 36 grid
+			else if(i==32){
+				var elem = document.createElement('div');
+				var text = document.createTextNode(i+1+" S->8");
+				elem.appendChild(text);				
+				elem.className = "elemStyleSnake";
+				document.getElementById('gameId').appendChild(elem);				
+			}
+
+			else if(i==22){
+				var elem = document.createElement('div');
+				var text = document.createTextNode(i+1+" S->3");
+				elem.appendChild(text);				
+				elem.className = "elemStyleSnake";
+				document.getElementById('gameId').appendChild(elem);				
+			}						
+
 			else{
 				var elem = document.createElement('div');
 				var text = document.createTextNode(i+1);
@@ -70,6 +106,7 @@ function hideDiv(){
 		}
 
 		if(buttonValue==100){
+
 			if((i+1)%10==0){
 				var elem = document.createElement('div');
 				var elemBr = document.createElement('br');
@@ -78,7 +115,8 @@ function hideDiv(){
 				elem.className = "elemStyle";
 				document.getElementById('gameId').appendChild(elem);
 				document.getElementById('gameId').appendChild(elemBr);
-			}
+			}						
+
 			else{
 				var elem = document.createElement('div');
 				var text = document.createTextNode(i+1);
@@ -86,7 +124,7 @@ function hideDiv(){
 				elem.className = "elemStyle";
 				document.getElementById('gameId').appendChild(elem);
 			}
-		}		
+		}				
 
 	}
 }
@@ -115,14 +153,31 @@ function DiceRoll(){
 		if(total1==buttonValue){
 			document.getElementsByClassName('elemStyle')[buttonValue-1].style.backgroundColor="black";
 			console.log("p1 win");
-		}		
+		}				
 
-		if(total1==buttonValue-1){
-			total1==2;
-			document.getElementsByClassName('elemStyle')[total1].style.backgroundColor="#59EA1A";
-			var snake = document.createTextNode('S->2');
-			document.getElementsByClassName('elemStyle')[buttonValue-1].appendChild(snake);
+
+		//for 36 grid ladder
+		if(buttonValue==36 && total1==5){
+			total1=23;
+			console.log("ladder jump "+total1);
 		}
+
+		if(buttonValue==36 && total1==5){
+			total1=21;
+			console.log("ladder jump "+total1);
+		}			
+
+
+		//for 36 grid snake
+		if(buttonValue==36 && total1==33){
+			total1=8;
+			console.log("snake jump "+total1);
+		}
+
+		if(buttonValue==36 && total1==23){
+			total1=3;
+			console.log("snake jump "+total1);
+		}				
 
 		console.log("p1 "+total1);
 		document.getElementById('playerTurn').innerHTML = "Turn: "+document.getElementById('p1').value;
@@ -147,6 +202,32 @@ function DiceRoll(){
 			document.getElementsByClassName('elemStyle')[buttonValue-1].style.backgroundColor="black";
 			console.log("p2 win");
 		}
+
+
+		//for 36 grid ladder
+		if(buttonValue==36 && total2==5){
+			total2=23;
+			console.log("ladder jump "+total2);
+		}
+
+		if(buttonValue==36 && total1==5){
+			total2=21;
+			console.log("ladder jump "+total2);
+		}			
+
+
+		//for 36 grid snake
+		if(buttonValue==36 && total2==33){
+			total2=8;
+			console.log("snake jump "+total2);
+		}
+
+		if(buttonValue==36 && total2==23){
+			total2=3;
+			console.log("snake jump "+total2);
+		}	
+
+
 
 		document.getElementById('playerTurn').innerHTML = "Turn: "+document.getElementById('p2').value;
 		document.getElementsByClassName('elemStyle')[total2-1].style.backgroundColor="#CA2A08";
