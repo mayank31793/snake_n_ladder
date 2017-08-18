@@ -102,6 +102,16 @@ input:focus{
 	margin-bottom: 3px;
 }
 
+.elemStyle2{
+	width: 67px;
+	height: 67px;
+	background-color: #581845;
+	border: 1px solid black;
+	display: inline-block;
+	margin-right: 3px;
+	margin-bottom: 3px;
+}
+
 .elemStyleLadder{
 	width: 67px;
 	height: 67px;
