@@ -12,9 +12,9 @@ function hideDiv(){
 	){
 		window.location.reload();
 	}
-	namePlayer1 = document.getElementById('p1').value;
+	namePlayer1 = document.getElementById('p1').value.substring(0,2);
 	console.log(namePlayer1);
-	namePlayer2 = document.getElementById('p2').value;
+	namePlayer2 = document.getElementById('p2').value.substring(0,2);
 	console.log(namePlayer2);
 	document.getElementById('detailsId').style.display = "none";
 	console.log("hide");
@@ -149,7 +149,8 @@ function hideDiv(){
 
 var total1 = 0;
 var total2 = 0;
-var prev = 0;
+var prev1 = 0;
+var prev2 = 0;
 
 function DiceRoll(){
 	clickDice+=1;
@@ -159,18 +160,22 @@ function DiceRoll(){
 
 	if(clickDice%2==0){
 		total1+=random;
-		prev = total1 - random;
+		prev1 = total1 - random;
+		console.log(prev1);
 	
 		if(total1>buttonValue){
 			total1 = total1 - random;
-			document.getElementsByClassName('elemStyle')[total1-1].style.backgroundColor="#59EA1A";
-			document.getElementsByClassName('elemStyle')[prev-1].style.backgroundColor="#A0DBB4";
+			// document.getElementsByClassName('elemStyle')[total1-1].style.backgroundColor="#59EA1A";
+			// document.getElementsByClassName('elemStyle')[prev1-1].style.backgroundColor="#A0DBB4";
+			document.getElementsByClassName('elemStyle')[total1-1].appendChild(playerNameSpan);
+			// document.getElementsByClassName('elemStyle')[prev1-1].removeChild(playerNameSpan);
 			console.log("total is more, back to total1 "+total1);
 		}
 
 		if(total1==buttonValue){
 			document.getElementsByClassName('elemStyle')[buttonValue-1].style.backgroundColor="black";
 			console.log("p1 win");
+			document.getElementById('winner').innerHTML = namePlayer1+" wins";
 		}	
 
 		// 36 grid			
@@ -289,26 +294,36 @@ function DiceRoll(){
 
 		console.log("p1 "+total1);
 		document.getElementById('playerTurn').innerHTML = "Turn: "+document.getElementById('p1').value;
-		document.getElementsByClassName('elemStyle')[total1-1].style.backgroundColor="#59EA1A";
-		document.getElementsByClassName('elemStyle')[prev-1].style.backgroundColor="#A0DBB4";
+		var playerNameSpan = document.createElement('span');
+		var playerOneName = document.createTextNode(" "+namePlayer1);
+		playerNameSpan.appendChild(playerOneName);
+		playerNameSpan.setAttribute('id','spanPlayer1');
+		document.getElementsByClassName('elemStyle')[total1-1].appendChild(playerNameSpan);
+		document.getElementsByClassName('elemStyle')[prev1-1].removeChild(document.getElementById('spanPlayer1'));
+		// document.getElementsByClassName('elemStyle')[total1-1].style.backgroundColor="#59EA1A";
+		// document.getElementsByClassName('elemStyle')[prev-1].style.backgroundColor="#A0DBB4";
 
 	}
 
 	else{
 		total2+=random;
-		prev = total2 - random;
+		prev2 = total2 - random;
 		console.log("p2 "+total2);
+		console.log(prev2);
 	
 		if(total2>buttonValue){
 			total2 = total2 - random;
-			document.getElementsByClassName('elemStyle')[total2-1].style.backgroundColor="#CA2A08";
-			document.getElementsByClassName('elemStyle')[prev-1].style.backgroundColor="#CA2A08";
+			document.getElementsByClassName('elemStyle')[total2-1].appendChild(playerNameSpan);
+			document.getElementsByClassName('elemStyle')[prev2-1].removeChild(playerNameSpan);
+			// document.getElementsByClassName('elemStyle')[total2-1].style.backgroundColor="#CA2A08";
+			// document.getElementsByClassName('elemStyle')[prev2-1].style.backgroundColor="#CA2A08";
 			console.log("total is more, back to total2 "+total2);
 		}
 
 		if(total2==buttonValue){
 			document.getElementsByClassName('elemStyle')[buttonValue-1].style.backgroundColor="black";
 			console.log("p2 win");
+			document.getElementById('winner').innerHTML = namePlayer2+" wins";
 		}
 
 		//36 grid
@@ -424,7 +439,13 @@ function DiceRoll(){
 		}		
 
 		document.getElementById('playerTurn').innerHTML = "Turn: "+document.getElementById('p2').value;
-		document.getElementsByClassName('elemStyle')[total2-1].style.backgroundColor="#CA2A08";
-		document.getElementsByClassName('elemStyle')[prev-1].style.backgroundColor="#A0DBB4";
+		var playerNameSpan = document.createElement('span');
+		var playerTwoName = document.createTextNode(" "+namePlayer2);
+		playerNameSpan.appendChild(playerTwoName);		
+		playerNameSpan.setAttribute('id','spanPlayer2')
+		document.getElementsByClassName('elemStyle')[total2-1].appendChild(playerNameSpan);
+		document.getElementsByClassName('elemStyle')[prev2-1].removeChild(document.getElementById('spanPlayer2'));
+	// 	document.getElementsByClassName('elemStyle')[total2-1].style.backgroundColor="#CA2A08";
+	// 	document.getElementsByClassName('elemStyle')[prev-1].style.backgroundColor="#A0DBB4";
 	}
 }

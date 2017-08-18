@@ -144,3 +144,24 @@ input:focus{
 .playerSecond{
 	background-color: #CA2A08;
 }
+
+#diceRollValue{
+	font-size: 60px;
+	color: #371080;
+	font-family: serif;
+	text-align: center;
+}
+
+#spanPlayer2{
+	color: #601080;
+}
+
+#spanPlayer1{
+	color: #1A8010;
+}
+
+#winner{
+	font-size: 35px;
+	text-shadow: 2px 2px #fff;
+	font-style: italic;
+}
